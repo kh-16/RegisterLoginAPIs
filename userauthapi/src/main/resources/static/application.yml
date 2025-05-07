@@ -1,0 +1,45 @@
+server:
+  address: localhost
+  port: 8080
+
+spring:
+  datasource:
+    url:  jdbc:postgresql://localhost:5432/postgres
+    username:  postgres
+    password:  "Kumaris@$16"
+    driver-class-name: org.postgresql.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto:  update
+    show-sql:  true
+properties:
+  hibernate:
+    format_sql: true
+
+security:
+  oauth2:
+    client:
+      registration:
+        google:
+          client-id: 75972098904-s0ut5tlt5s0d78cod0g5aoo1b99812j4.apps.googleusercontent.com
+          client-secret: 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
+          redirect-uri: "http://localhost:8080/login/oauth2/code/google"
+          scope:
+            - openid
+            - email
+            - profile
+      provider:
+        google:
+          authorization-uri: https://accounts.google.com/o/oauth2/v2/auth
+          token-uri: https://oauth2.googleapis.com/token
+          user-info-uri: https://www.googleapis.com/oauth2/v3/userinfo
+user-name-attribute: sub
+
+jwt:
+  secret: secret123
+  expiration: 3600000  # 1 hour in milliseconds
+
+logging:
+  level:
+    root: INFO
