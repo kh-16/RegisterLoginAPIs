@@ -11,7 +11,7 @@ It allows users to register and login (with JWT tokens) securely.
 ✅ Passwords encrypted with BCrypt
 ✅ Role-based access support
 
-🛠 Tech Stack
+🛠 Tech Stack(assets/Tech Track.png)
 Java 21
 Spring Boot 3.x
 Spring Security
